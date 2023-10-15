@@ -8,21 +8,8 @@ const Checkbox = ({
   id,
   rules,
   checkboxText,
+  checkboxLen,
 }) => {
-  const checkbox = [
-    { id: "checkList1", checkboxText: "item1" },
-    { id: "checkList2", checkboxText: "item2" },
-    {
-      id: "checkList3",
-      checkboxText: "item3",
-      rules: {
-        required: {
-          value: true,
-          message: "至少勾選一項",
-        },
-      },
-    },
-  ];
   return (
     <div className="form-check">
       <input
@@ -36,7 +23,7 @@ const Checkbox = ({
       <label htmlFor={id} className="form-check-label">
         {checkboxText}
       </label>
-      {errors.like && id === `checkList${checkbox.length}` && (
+      {errors.like && id === `checkList${checkboxLen}` && (
         <div className="invalid-feedback">{errors?.like?.message}</div>
       )}
     </div>
